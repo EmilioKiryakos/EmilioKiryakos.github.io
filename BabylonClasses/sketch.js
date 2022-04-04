@@ -2,14 +2,14 @@
           constructor(name, height, x, z){
               this.name = name;
               this.height = height;
-              this.x = x;
-              this.z = z;
           }
 
-          build(){
+          build(x, z){
               for (let i = 0; i < this.height; i++){
                   let sphere = BABYLON.MeshBuilder.CreateSphere('sphere', {diameter: 1}, scene);
-                  sphere.position = new BABYLON.Vector3(this.x, i, this.z);
+                  sphere.position.y = -0.5 + i;
+                  sphere.position.x = x;
+                  sphere.position.z = z;
               }
           }
       }
@@ -51,9 +51,12 @@
     // let tgt = model_settings.position; 
     // camera.setTarget(BABYLON.Vector3(tgt.x, tgt.y, tgt.z));
     
-    let frosty = new snowman('Frosty', 3, 10, 10);
+    // building frosty the snowman
+    let frosty = new snowman('Frosty', 3);
     console.log(frosty);
-    frosty.build();
+    for (let i = 0; i < 10; i++){
+          scooter.build(i,i);
+    }
     
     // This attaches the camera to the canvas
     camera.attachControl(canvas, true);
