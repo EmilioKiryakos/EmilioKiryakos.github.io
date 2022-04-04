@@ -1,5 +1,5 @@
       let snowman = class{
-          constructor(name, height, x, z){
+          constructor(name, height){
               this.name = name;
               this.height = height;
           }
