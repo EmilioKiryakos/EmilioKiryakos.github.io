@@ -39,9 +39,11 @@ var createScene = function () {
 
     var move_sphere = {obj: sphere, prop: 'position', val: new BABYLON.Vector3(0, 3, 0), dims: ['x', 'y', 'z']};
     var dim_light = {obj: light, prop: 'intensity', val: 1, dims: false};
+    var brighten_light = {obj: light, prop: 'intensity', val: 1, dims: true};
     var animations = [];
     animations.push(move_sphere);
     animations.push(dim_light);
+    animations.push(brighten_light);
     document.getElementById('renderCanvas').addEventListener('click', function(){
         animate(animations, scene, 9);
     });
