@@ -37,7 +37,7 @@ var createScene = function () {
     // Move the sphere upward 1/2 its height
     sphere.position.y = 1;
 
-    let object = placeObject('./', 'Runestones.obj', position, scene, scale = 10, rotation = new BABYLON.Vector3(0, Math.PI, 0), wrap_color = false)
+    let object = placeObject('./', 'Runestones.obj', new BABYLON.Vector3(0, 0, 0), scene, 10, new BABYLON.Vector3(0, Math.PI, 0));
 
     // Our built-in 'ground' shape.
     var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
